@@ -1,6 +1,12 @@
-﻿namespace API.StoreShared.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace API.StoreShared.DTOs
 {
     public class UserLoginRequestDto
     {
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public string Password { get; set; }
     }
 }

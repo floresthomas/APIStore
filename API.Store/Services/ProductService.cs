@@ -1,4 +1,5 @@
-﻿using API.StoreData;
+﻿using API.Store.Services.Interfaces;
+using API.StoreData;
 using API.StoreShared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
