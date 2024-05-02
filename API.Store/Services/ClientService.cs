@@ -1,4 +1,5 @@
-﻿using API.StoreData;
+﻿using API.Store.Services.Interfaces;
+using API.StoreData;
 using API.StoreShared;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ namespace API.Store.Services
         {  
             _context = context; 
         }
+
         public async Task<IEnumerable<Client>> GetAll()
         {
             return await _context.Clients.ToListAsync();
