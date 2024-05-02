@@ -28,19 +28,22 @@ namespace API.Store.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ApiStoreDbContext _dbContext;
         private readonly TokenValidationParameters _tokenValidationParameters;
-
+        private readonly ILogger<AuthenticationController> _logger;
         public AuthenticationController(UserManager<IdentityUser> userManager, IOptions<JwtConfig> jwtConfig, IEmailSender emailSender, 
-                                        ApiStoreDbContext dbContext, TokenValidationParameters tokenValidationParameters)
+                                        ApiStoreDbContext dbContext, TokenValidationParameters tokenValidationParameters,
+                                        ILogger<AuthenticationController> logger)
         {
             _userManager = userManager;
             _jwtConfig = jwtConfig.Value;
             _emailSender = emailSender;
             _dbContext = dbContext;
             _tokenValidationParameters = tokenValidationParameters;
+            _logger = logger;
         }
         [HttpPost("Register")]
         public async Task<IActionResult> Register([FromBody] UserRegistrationRequestDto request)
         {
+            _logger.LogWarning("A user is trying to register");
             if (!ModelState.IsValid) return BadRequest();
 
             //Verify if email exists
