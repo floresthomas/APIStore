@@ -1,10 +1,12 @@
-﻿using API.Store.Services;
+﻿using API.Store.Services.Interfaces;
 using API.StoreShared;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Store.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class ProductsController : ControllerBase
     {

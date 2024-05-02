@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace API.Store.Services
+namespace API.Store.Services.Interfaces
 {
     public interface ICrudService<T>
     {
