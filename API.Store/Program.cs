@@ -52,7 +52,7 @@ try
     });
     });
 
-    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection2");
     builder.Services.AddDbContext<ApiStoreDbContext>(options => options.UseSqlServer(connectionString));
     builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection("JwtConfig"));
     builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
@@ -103,8 +103,8 @@ try
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.
-        app.UseSwagger();
-        app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 
     app.UseHttpsRedirection();
 

@@ -144,7 +144,27 @@ namespace API.Store.Controllers
                 : "There has been an error confirming your email.";
             return Ok(status);
         }
+        [HttpPost("RefreshToken")]
+        public async Task<IActionResult> RefreshToken([FromBody] TokenRequest tokenRequest)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(new AuthResult
+                {
+                    Errors = new List<string> { "Invalid parameters" },
+                    Result = false
+                });
 
+            var results = VerifyAndGenerateTokenAsync(tokenRequest);
+
+            if (results == null)
+                return BadRequest(new AuthResult
+                {
+                    Errors = new List<string> { "Invalid token" },
+                    Result = false
+                });
+
+            return Ok(results);
+        }
         private async Task<AuthResult> GenerateTokenAsync(IdentityUser user)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
@@ -190,26 +210,6 @@ namespace API.Store.Controllers
             };
         }
 
-        public async Task<IActionResult> RefreshToken([FromBody] TokenRequest tokenRequest)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(new AuthResult
-                {
-                    Errors = new List<string> { "Invalid parameters" },
-                    Result = false
-                });
-
-            var results = VerifyAndGenerateTokenAsync(tokenRequest);
-
-            if (results == null)
-                return BadRequest(new AuthResult
-                {
-                    Errors = new List<string> { "Invalid token" },
-                    Result = false
-                });
-
-            return Ok(results);
-        }
 
         private async Task<AuthResult> VerifyAndGenerateTokenAsync(TokenRequest tokenRequest)
         {
