@@ -1,4 +1,5 @@
 API Store
+
 Esta API ASP.NET Core ayuda a manejar la gestión de órdenes, productos y usuarios, incluyendo autenticación y autorización. Además de las operaciones básicas de CRUD (Crear, Leer, Actualizar, Eliminar), la API ofrece las siguientes características clave:
 
 Autenticación y Autorización: 
