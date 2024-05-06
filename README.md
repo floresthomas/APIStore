@@ -18,9 +18,11 @@ Antes de levantar el proyecto, asegúrate de tener instalado lo siguiente:
 - [Visual Studio](https://visualstudio.microsoft.com/) o [Visual Studio Code](https://code.visualstudio.com/)
 
 Configuración del Proyecto
-Clona el repositorio en tu máquina local:
-git clone https://github.com/tu-usuario/tu-proyecto.git
 
+Clona el repositorio en tu máquina local, usando el comando:
+```json
+git clone https://github.com/tu-usuario/tu-proyecto.git
+```
 Abre el proyecto en el IDE que hayas decidido instalar (por ejemplo, Visual Studio o Visual Studio Code).
 Asegúrate de restaurar las dependencias del proyecto ejecutando el siguiente comando en la raíz del proyecto:
 dotnet restore
