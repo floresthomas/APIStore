@@ -6,6 +6,7 @@ Autenticación y Autorización:
 - Implementé un sistema de autenticación utilizando tokens de acceso JWT (JSON Web Token).
 - Verificación por Correo Electrónico: Incluye un proceso de verificación por correo electrónico para validar las cuentas de usuario. Después del registro, se envía un correo electrónico de verificación con un enlace único que el usuario debe hacer clic para confirmar su dirección de correo electrónico antes de poder iniciar sesión.
 - Gestión de Refresh Tokens: La API implementa un mecanismo de refresh token para permitir a los clientes solicitar un nuevo token de acceso sin tener que volver a ingresar las credenciales de inicio de sesión.
+  
 Integración con SQL Server:
 - La API utiliza una base de datos SQL Server para almacenar la información de órdenes, productos y usuarios. 
 - Utilicé Entity Framework Core para interactuar con la base de datos y realizar operaciones de lectura y escritura.
@@ -29,7 +30,7 @@ dotnet restore
 
 ### Ejecutar el Proyecto
 
-Para ejecutar el proyecto, sigue estos pasos:
+Para ejecutar el proyecto, seguí estos pasos:
 
 Abre una terminal en la raíz del proyecto.
 
@@ -39,9 +40,9 @@ dotnet run
 ```
 La aplicación estará disponible en el puerto http://localhost:5278
 
-Para acceder a la documentación de la API a través de swagger, visita esta direccion http://localhost:5278/swagger
+Para acceder a la documentación de la API a través de swagger, entra en esta direccion http://localhost:5278/swagger
 
-Uso
+### Uso de la aplicación
 
 ### Registro de Usuario
 
@@ -85,8 +86,8 @@ La respuesta mostrará un token de acceso y un token de refresco:
 
 ### Autorización en Swagger
 
-Para autorizar tus solicitudes en Swagger, apreta clic en el botón "Authorize" y agrega el token de acceso obtenido después de iniciar sesión como un encabezado de autorización con el formato Bearer. Por ejemplo:
+Para autorizar tus solicitudes en Swagger, apretá clic en el botón "Authorize" y agrega el token de acceso obtenido después de iniciar sesión como un encabezado de autorización con el formato Bearer. Por ejemplo:
 
 Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ...
 
-Una vez que hayas autorizado tu solicitud, podrás acceder a los otros endpoints protegidos de la API.
+Una vez que hayas autorizado tu solicitud, podés acceder a los otros endpoints protegidos de la API.
