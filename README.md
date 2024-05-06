@@ -22,7 +22,7 @@ Configuración del Proyecto
 
 Clona el repositorio en tu máquina local, usando el comando:
 ```json
-git clone https://github.com/tu-usuario/tu-proyecto.git
+git clone https://github.com/floresthomas/APIStore.git
 ```
 Abre el proyecto en el IDE que hayas decidido instalar (por ejemplo, Visual Studio o Visual Studio Code).
 Asegúrate de restaurar las dependencias del proyecto ejecutando el siguiente comando en la raíz del proyecto:
