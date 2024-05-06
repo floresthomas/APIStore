@@ -32,9 +32,13 @@ dotnet restore
 Para ejecutar el proyecto, sigue estos pasos:
 
 Abre una terminal en la raíz del proyecto.
+
 Ejecuta el siguiente comando para compilar y ejecutar la aplicación:
+```json
 dotnet run
+```
 La aplicación estará disponible en el puerto http://localhost:5278
+
 Para acceder a la documentación de la API a través de swagger, visita esta direccion http://localhost:5278/swagger
 
 Uso
